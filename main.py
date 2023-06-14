@@ -20,17 +20,17 @@ configuration.api_key_prefix['tokenAuth'] = 'Bearer'
 
 with MergeATSClient.ApiClient(configuration) as api_client:
     api_instance = candidates_api.CandidatesApi(api_client)
-    x_account_token = os.environ["X_ACCOUNT_TOKEN"] 
+    x_account_token = os.environ["WORKABLE_ACCOUNT_TOKEN"] 
 
     candidate_endpoint_request = CandidateEndpointRequest(
         model=CandidateRequest(
-            remote_id="21198",
-            first_name="Gil",
-            last_name="Feig",
+            # remote_id="21198",
+            first_name="Jason",
+            last_name="Grey",
             company="Columbia Dining App.",
-            title="Software Engineer",
-            remote_created_at=parse('2021-10-15T00:00:00Z'),
-            remote_updated_at=parse('2021-10-16T00:00:00Z'),
+            title="Software Engineer II",
+            # remote_created_at=parse('2021-10-15T00:00:00Z'),
+            # remote_updated_at=parse('2021-10-16T00:00:00Z'),
             last_interaction_at=parse('2021-10-17T00:00:00Z'),
             is_private=True,
             can_email=True,
@@ -43,7 +43,7 @@ with MergeATSClient.ApiClient(configuration) as api_client:
             ],
             email_addresses=[
                 EmailAddressRequest(
-                    value="merge_is_hiring@merge.dev",
+                    value="jason-grey@gmail.com",
                     email_address_type="PERSONAL"
                 ),
             ],
@@ -54,18 +54,18 @@ with MergeATSClient.ApiClient(configuration) as api_client:
                 ),
             ],
             tags=["High-Priority"],
-            applications=["75b30b04-25f0-42f2-b6da-c1750d00ec4c"],
+            applications=["59ac7ad3-de52-4150-b8b6-f099908d8b2f"],
             attachments=[],
-            custom_fields={
-                "key": None,
-            },
-            remote_template_id="92830948203",
-            integration_params={
-                "key": None,
-            },
-            linked_account_params={
-                "key": None,
-            },
+            # custom_fields={
+            #     "key": None,
+            # },
+            # remote_template_id="92830948203",
+            # integration_params={
+            #     "key": None,
+            # },
+            # linked_account_params={
+            #     "key": None,
+            # },
         ),
         remote_user_id="75b30b04-25f0-42f2-b6da-c1750d00ec4c",
     )
@@ -76,6 +76,6 @@ with MergeATSClient.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.candidates_create(x_account_token, candidate_endpoint_request, is_debug_mode=is_debug_mode, run_async=run_async)
-        pprint(api_response)
+        # pprint(api_response)
     except MergeATSClient.ApiException as e:
         print("Exception when calling CandidatesApi->candidates_create: %s\n" % e)
