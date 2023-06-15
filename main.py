@@ -26,7 +26,7 @@ mergeCreateResponse = merge.ats.candidates.create(
                 }
             ],
             "email_addresses":[
-                { "value":"jason-grey4@gmail.com",
+                { "value":"jason-grey11@gmail.com",
                     "email_address_type":"PERSONAL"
                 }
             ],
@@ -36,9 +36,9 @@ mergeCreateResponse = merge.ats.candidates.create(
                 }
             ],
             "tags":["High-Priority"],
-            "applications":["59ac7ad3-de52-4150-b8b6-f099908d8b2f"],
+            "applications":["d9a62c50-a9fe-452b-878a-6891f6b368fd"],
     },
-    remote_user_id="75b30b04-25f0-42f2-b6da-c1750d00ec4c",
+    remote_user_id="80aaa7a6-2f7c-4bf8-9b26-2a8f7d77c550",
 )
 
 print(mergeCreateResponse)
