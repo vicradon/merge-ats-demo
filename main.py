@@ -1,15 +1,12 @@
-from merge import Merge
+from merge.client import Merge
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-merge = Merge(
-    api_key=os.environ['API_KEY'],
-    account_token=os.environ['WORKABLE_ACCOUNT_TOKEN']
-)
+client = Merge(api_key=os.environ['API_KEY'], account_token=os.environ['WORKABLE_ACCOUNT_TOKEN'])
 
-mergeCreateResponse = merge.ats.candidates.create(
+mergeCreateResponse = client.ats.candidates.create(
     model = {
             "first_name":"Jason",
             "last_name":"Grey",
